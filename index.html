@@ -274,6 +274,8 @@
   .menu-item h4{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.25}
   .menu-item h4 span{font-family:var(--cn);font-size:16px;font-weight:700;color:var(--gold-deep);margin-left:8px;white-space:nowrap}
   .menu-item p{font-size:14.5px;color:var(--cocoa);margin-top:5px}
+  .menu-price{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--gold-deep);white-space:nowrap;flex:none}
+  .menu-price i{font-family:var(--sans);font-style:normal;font-size:12px;font-weight:500;color:var(--muted);margin-left:2px}
   .menu-note{
     margin-top:44px;padding:22px 26px;border:1px solid var(--line);
     display:flex;gap:16px;align-items:flex-start;background:rgba(250,246,239,.6);
@@ -630,80 +632,48 @@
       <div class="eyebrow">The Menu</div>
       <h2>From Our Kitchen to Your Table.</h2>
       <p class="cn-head">用心烹調，每一道都值得分享。</p>
-      <p class="lede">A selection of Cantonese classics, roasted meats, seafood and family favourites. Choose a category to explore.</p>
+      <p class="lede">A selection from our menu, with prices. Choose a category to explore.</p>
     </div>
 
     <div class="menu-tabs reveal d1" role="tablist" aria-label="Menu categories">
-      <button class="menu-tab active" role="tab" aria-selected="true" data-tab="roast">Signature Roasted Meats</button>
-      <button class="menu-tab" role="tab" aria-selected="false" data-tab="seafood">Seafood</button>
-      <button class="menu-tab" role="tab" aria-selected="false" data-tab="steamed">Steamed Dishes</button>
+      <button class="menu-tab active" role="tab" aria-selected="true" data-tab="seafood">Seafood</button>
+      <button class="menu-tab" role="tab" aria-selected="false" data-tab="meat">Meat &amp; Poultry</button>
       <button class="menu-tab" role="tab" aria-selected="false" data-tab="stirfry">Cantonese Stir-Fry</button>
-      <button class="menu-tab" role="tab" aria-selected="false" data-tab="tofu">Tofu &amp; Vegetables</button>
-      <button class="menu-tab" role="tab" aria-selected="false" data-tab="rice">Rice &amp; Noodles</button>
-      <button class="menu-tab" role="tab" aria-selected="false" data-tab="soups">Soups</button>
+      <button class="menu-tab" role="tab" aria-selected="false" data-tab="vegetables">Vegetables</button>
     </div>
 
-    <div class="menu-panel active" id="panel-roast" role="tabpanel">
+    <div class="menu-panel active" id="panel-seafood" role="tabpanel">
       <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Signature Roast Goose<span>招牌燒鵝</span></h4></div><p>Slow-roasted whole goose with lacquered, crispy skin. Advance booking recommended.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Crispy Roast Pork<span>脆皮燒肉</span></h4></div><p>Golden blistered crackling, tender layered pork belly.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Char Siu BBQ Pork<span>蜜汁叉燒</span></h4></div><p>Charcoal-roasted pork with a sweet, caramelised glaze.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Roast Duck<span>明爐燒鴨</span></h4></div><p>Traditional roast duck with crisp skin and rich, juicy meat.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Soya Sauce Chicken<span>豉油雞</span></h4></div><p>Poached chicken steeped in fragrant soya and spice.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Pan-Fried King Prawns<span>干煎虾碌</span></h4><span class="menu-price">RM50 <i>小</i> &middot; RM100 <i>大</i></span></div><p>Pan-fried prawns, crisp and richly flavoured.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Herb Prawn Balls<span>香草虾球</span></h4><span class="menu-price">RM58 <i>小</i> &middot; RM116 <i>大</i></span></div><p>Golden prawn cakes with fragrant herbs.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Black Bean Clams<span>豉汁炒啦啦</span></h4><span class="menu-price">RM28 <i>小</i></span></div><p>Fresh clams wok-tossed in black bean sauce.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Ginger &amp; Spring Onion Crab<span>姜葱炒蟹</span></h4><span class="menu-price">时价 <i>Market price</i></span></div><p>Whole crab with ginger and spring onion. Pre-order recommended.</p></li>
       </ul>
     </div>
-    <div class="menu-panel" id="panel-seafood" role="tabpanel">
+    <div class="menu-panel" id="panel-meat" role="tabpanel">
       <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Steamed Fish<span>清蒸魚</span></h4></div><p>Fresh fish steamed with ginger and spring onion, finished with light soya.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Garlic Steamed Prawns<span>蒜蓉蒸蝦</span></h4></div><p>Large prawns steamed over vermicelli with fragrant garlic.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Steamed Scallops<span>蒜蓉蒸扇貝</span></h4></div><p>Plump scallops in the shell, steamed with garlic and glass noodles.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Salt &amp; Pepper Squid<span>椒鹽鮮魷</span></h4></div><p>Crisp-fried squid tossed with salt, pepper and fried garlic.</p></li>
-      </ul>
-    </div>
-    <div class="menu-panel" id="panel-steamed" role="tabpanel">
-      <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Steamed Chicken with Mushrooms<span>冬菇蒸雞</span></h4></div><p>Chicken steamed with dried mushrooms and Chinese sausage.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Steamed Pork Patty<span>冬菜蒸肉餅</span></h4></div><p>Hand-minced pork with preserved vegetables, steamed until tender.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Steamed Egg with Minced Pork<span>肉碎蒸水蛋</span></h4></div><p>Silky steamed egg topped with savoury minced pork.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>White Cut Chicken<span>白切雞</span></h4></div><p>Gently poached chicken with ginger and spring onion sauce.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Roast Black Pork Spare Ribs<span>黑毛猪烧排骨</span></h4><span class="menu-price">RM38 <i>小</i></span></div><p>Roasted spare ribs, lacquered and tender.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Steamed Spare Ribs in Black Bean Sauce<span>豉汁蒸排骨</span></h4><span class="menu-price">RM35 <i>小</i></span></div><p>Steamed spare ribs with black bean sauce.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Poached Chicken with Luffa<span>胜瓜浸鸡</span></h4><span class="menu-price">RM48</span></div><p>Poached chicken with angled luffa in a light broth.</p></li>
       </ul>
     </div>
     <div class="menu-panel" id="panel-stirfry" role="tabpanel">
       <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Beef with Black Bean Sauce<span>豉汁炒牛肉</span></h4></div><p>Wok-seared beef with fermented black beans and peppers.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Sweet &amp; Sour Pork<span>咕嚕肉</span></h4></div><p>Crisp pork in a bright sweet-and-sour glaze with peppers and pineapple.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Stir-Fried Prawns with Cashew Nuts<span>腰果蝦仁</span></h4></div><p>Plump prawns wok-tossed with crunchy cashews and celery.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Beef with Ginger &amp; Spring Onion<span>薑蔥牛肉</span></h4></div><p>Tender beef slices with ginger, spring onion and a light sauce.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Fish Ball &amp; Choy Sum<span>鱼丸炒菜心</span></h4><span class="menu-price">RM30 <i>小</i></span></div><p>Fish balls stir-fried with choy sum.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Choy Sum with Sliced Pork<span>菜心炒肉片</span></h4><span class="menu-price">RM25 <i>小</i></span></div><p>Choy sum wok-tossed with sliced pork.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Choy Sum with Char Siu<span>叉烧炒菜心</span></h4><span class="menu-price">RM25 <i>小</i></span></div><p>Choy sum with char siu pork.</p></li>
       </ul>
     </div>
-    <div class="menu-panel" id="panel-tofu" role="tabpanel">
+    <div class="menu-panel" id="panel-vegetables" role="tabpanel">
       <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Braised Tofu with Mushrooms<span>紅燒豆腐</span></h4></div><p>Golden tofu braised with mushrooms in a savoury sauce.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Stir-Fried Kai Lan<span>蒜蓉芥蘭</span></h4></div><p>Crisp Chinese broccoli wok-tossed with garlic.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Buddha's Delight<span>羅漢齋</span></h4></div><p>A classic mixed vegetable and tofu braise.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Spinach with Garlic<span>蒜蓉菠菜</span></h4></div><p>Fresh spinach quickly stir-fried with garlic.</p></li>
-      </ul>
-    </div>
-    <div class="menu-panel" id="panel-rice" role="tabpanel">
-      <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Yangzhou Fried Rice<span>揚州炒飯</span></h4></div><p>Wok-fried rice with egg, prawns, char siu and vegetables.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Seafood Hor Fun<span>海鮮河粉</span></h4></div><p>Silky flat rice noodles with seafood in a rich gravy.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Wonton Noodles<span>雲吞麵</span></h4></div><p>Springy noodles with handmade wontons in clear broth.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Dry-Fried Beef Hor Fun<span>乾炒牛河</span></h4></div><p>Smoky wok-fried flat noodles with beef and bean sprouts.</p></li>
-      </ul>
-    </div>
-    <div class="menu-panel" id="panel-soups" role="tabpanel">
-      <ul class="menu-list">
-        <li class="menu-item"><div class="menu-item-head"><h4>Double-Boiled Chicken Soup<span>燉雞湯</span></h4></div><p>Slow double-boiled chicken soup, clear and nourishing.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Winter Melon Soup<span>冬瓜湯</span></h4></div><p>Light, refreshing winter melon soup.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Fish Maw Soup<span>花膠湯</span></h4></div><p>Rich, silky soup with fish maw and dried scallops.</p></li>
-        <li class="menu-item"><div class="menu-item-head"><h4>Crab Meat &amp; Sweet Corn Soup<span>蟹肉粟米羹</span></h4></div><p>Comforting sweet corn soup with crab meat.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Blanched Choy Sum<span>盐水菜心</span></h4><span class="menu-price">RM20 <i>小</i> &middot; RM40 <i>大</i></span></div><p>Choy sum, simply blanched.</p></li>
+        <li class="menu-item"><div class="menu-item-head"><h4>Stir-Fried Choy Sum<span>生炒菜心</span></h4><span class="menu-price">RM22 <i>小</i> &middot; RM44 <i>大</i></span></div><p>Choy sum, wok-tossed fresh.</p></li>
       </ul>
     </div>
 
     <div class="menu-note reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-      <p><b>Sample menu.</b> Dishes shown are examples of Cantonese classics — the full menu, daily specials and prices are available at the restaurant. Please contact us to confirm availability.</p>
+      <p><b>Prices in Malaysian Ringgit (RM).</b> Small (小) and large (大) portions are available for selected dishes. This is a selection from our menu — the full menu, daily specials and today&rsquo;s prices are available at the restaurant. Prices may change — please contact us to confirm.</p>
     </div>
     <div class="menu-cta reveal">
       <p>想知道今天的菜单和价格？WhatsApp 我们，直接发给你。<br><span>For today&rsquo;s menu and prices, WhatsApp us and we will send them to you.</span></p>
@@ -838,7 +808,7 @@
       </details>
       <details>
         <summary>Can I see the full menu and prices?</summary>
-        <p>The menu on this page shows sample Cantonese classics. For today&rsquo;s full menu and prices, WhatsApp us and we will send them to you.</p>
+        <p>This page shows a selection from our menu, with prices. For the full menu, daily specials and today&rsquo;s prices, WhatsApp us and we will send them to you.</p>
       </details>
       <details>
         <summary>What are your opening hours?</summary>
@@ -891,7 +861,7 @@
       </div>
     </div>
     <div class="foot-disclaimer">
-      The dining-room and roast-meat photos are real customer-shared photos from the restaurant's Google Maps listing. Other food photography is illustrative and does not depict the restaurant's actual dishes. Menu items shown are samples — please contact the restaurant for the current menu and prices.
+      The dining-room and roast-meat photos are real customer-shared photos from the restaurant's Google Maps listing. Other food photography is illustrative and does not depict the restaurant's actual dishes. Menu items and prices are taken from the restaurant&rsquo;s menu. Prices may change — please contact the restaurant to confirm.
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> Shang Pin Cantonese Restaurant 上品粵菜館. All rights reserved.</span>
