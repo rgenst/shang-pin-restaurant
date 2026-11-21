@@ -8,8 +8,8 @@
 <meta property="og:title" content="Shang Pin Cantonese Restaurant 上品粵菜館 — Johor Bahru">
 <meta property="og:description" content="Authentic Cantonese flavours, made to be shared. Signature roast goose, roasted meats and family dining in Bukit Indah, Johor Bahru.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://rgenst.github.io/shang-pin-restaurant/">
-<meta property="og:image" content="https://rgenst.github.io/shang-pin-restaurant/hero-goose.jpg">
+<meta property="og:url" content="https://shang-pin-restaurant.pages.dev/">
+<meta property="og:image" content="https://shang-pin-restaurant.pages.dev/hero-goose.jpg">
 <meta name="robots" content="noindex, nofollow"> <!-- preview only: remove after payment -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +31,8 @@
     "addressCountry": "MY"
   },
   "telephone": "+60-11-2099-7188",
-  "hasMap": "https://maps.app.goo.gl/QjFUmkfYDPoPePbTA",
-  "priceRange": "$$"
+  "url": "https://shang-pin-restaurant.pages.dev/",
+  "hasMap": "https://maps.app.goo.gl/QjFUmkfYDPoPePbTA"
 }
 </script>
 <style>
@@ -190,6 +190,9 @@
   }
   .hero p{margin-top:20px;font-size:17px;color:rgba(250,246,239,.78);max-width:520px}
   .hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+  .hero-call{margin-top:22px;font-size:15px;color:rgba(250,246,239,.75)}
+  .hero-call a{color:var(--gold-light);font-weight:600;letter-spacing:.04em}
+  .hero-call a:hover{color:var(--gold)}
   .hero-meta{
     display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:52px;
     font-size:12px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,246,239,.6);
@@ -277,6 +280,10 @@
   .menu-note svg{width:22px;height:22px;flex:none;margin-top:3px;stroke:var(--gold-deep)}
   .menu-note p{font-size:14.5px;color:var(--cocoa)}
   .menu-note b{color:var(--ink);font-weight:500}
+  .menu-cta{margin-top:28px;text-align:center}
+  .menu-cta p{font-size:15.5px;color:var(--cocoa);line-height:1.7}
+  .menu-cta p span{font-size:13.5px;color:var(--muted)}
+  .menu-cta .btn{margin-top:16px}
 
   /* ---------- goose experience ---------- */
   .goose-exp{padding:0;background:var(--ink);color:var(--ivory)}
@@ -317,11 +324,32 @@
   .loc-row .sub{font-size:13.5px;color:var(--muted);margin-top:3px}
   .loc-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
   .loc-cta .btn{padding:14px 26px;font-size:12px}
+  .loc-reviews{font-size:14px;color:var(--muted);margin-top:6px}
+  .loc-reviews a{color:var(--gold-deep);font-weight:500}
+  .loc-reviews a:hover{color:var(--ink)}
   .map-frame{
     position:relative;min-height:420px;border:1px solid var(--line-dark);
     background:var(--ivory);overflow:hidden;
   }
   .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.25) sepia(.08)}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream)}
+  .faq-head{text-align:center}
+  .faq-head .eyebrow{justify-content:center}
+  .faq-head .eyebrow::after{content:"";width:44px;height:1px;background:var(--gold)}
+  .faq-list{max-width:780px;margin:48px auto 0;display:grid;gap:12px}
+  .faq-list details{background:var(--ivory);border:1px solid var(--line);padding:0 24px}
+  .faq-list summary{
+    cursor:pointer;list-style:none;position:relative;
+    font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);
+    padding:20px 32px 20px 0;
+  }
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;font-weight:300;color:var(--gold-deep)}
+  .faq-list details[open] summary::after{content:"\2013"}
+  .faq-list details p{font-size:15.5px;line-height:1.75;color:var(--cocoa);padding:0 0 22px}
+  .faq-list details p a{color:var(--gold-deep);font-weight:500}
 
   /* ---------- final CTA ---------- */
   .final-cta{
@@ -381,6 +409,9 @@
   }
   .wa-float:hover + .wa-label{opacity:1;transform:none}
 
+  /* ---------- sticky mobile contact bar (mobile only) ---------- */
+  .sticky-cta{display:none}
+
   /* ---------- preview badge (remove after payment) ---------- */
   .preview-badge{
     position:fixed;left:22px;bottom:22px;z-index:90;
@@ -389,7 +420,7 @@
     padding:9px 14px;border:1px solid rgba(201,163,92,.55);border-radius:4px;
     pointer-events:none;
   }
-  @media (max-width:640px){.preview-badge{left:14px;bottom:14px;font-size:10px;padding:8px 11px}}
+  @media (max-width:640px){.preview-badge{left:14px;bottom:66px;font-size:10px;padding:8px 11px}}
 
   /* ---------- responsive ---------- */
   @media (max-width:960px){
@@ -419,6 +450,19 @@
     .wa-label{display:none}
     .family-imgs{padding-bottom:48px}
     .scroll-cue{display:none}
+    .wa-float{display:none}
+    body{padding-bottom:56px}
+    .sticky-cta{
+      display:flex;position:fixed;left:0;right:0;bottom:0;z-index:95;
+      box-shadow:0 -6px 24px rgba(0,0,0,.28);
+    }
+    .sticky-cta a{
+      flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+      padding:15px 8px;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.06em;
+      color:#fff;text-align:center;white-space:nowrap;
+    }
+    .sticky-call{background:var(--gold-deep)}
+    .sticky-wa{background:#25d366}
   }
 </style>
 </head>
@@ -441,7 +485,7 @@
         <li><a href="#visit">Visit Us</a></li>
       </ul>
     </nav>
-    <a class="btn btn-gold nav-cta" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve a Table</a>
+    <a class="btn btn-gold nav-cta" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve a Table</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
@@ -456,7 +500,8 @@
   <a href="#menu">Menu</a>
   <a href="#roast-goose">Roast Goose</a>
   <a href="#visit">Visit Us</a>
-  <a class="btn btn-gold" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve a Table</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn btn-gold" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve a Table</a>
 </div>
 
 <!-- ============ A · HERO ============ -->
@@ -471,8 +516,9 @@
     <p class="reveal d2">Discover traditional Cantonese cuisine, signature roasted meats and delicious dishes made for sharing — in the heart of Taman Bukit Indah.</p>
     <div class="hero-cta reveal d3">
       <a class="btn btn-gold" href="#menu">Explore Our Menu</a>
-      <a class="btn btn-outline" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve a Table</a>
+      <a class="btn btn-outline" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve a Table</a>
     </div>
+    <p class="hero-call reveal d3">Prefer to talk? Call <a href="tel:+601120997188">011-2099 7188</a></p>
     <div class="hero-meta reveal d3">
       <span><i></i>Signature Roast Goose</span>
       <span><i></i>Family Dining</span>
@@ -501,7 +547,7 @@
         </div>
         <div class="dish-body">
           <h3>Signature Roast Goose<span>招牌燒鵝</span></h3>
-          <p>Slow-roasted until the skin turns lacquered and crisp, the meat beneath rich and juicy. Our most requested dish — best shared, best booked ahead.</p>
+          <p>Slow-roasted until the skin turns lacquered and crisp, the meat beneath rich and juicy. Best shared, best booked ahead.</p>
           <span class="dish-tag">House Signature</span>
         </div>
       </article>
@@ -658,6 +704,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       <p><b>Sample menu.</b> Dishes shown are examples of Cantonese classics — the full menu, daily specials and prices are available at the restaurant. Please contact us to confirm availability.</p>
     </div>
+    <div class="menu-cta reveal">
+      <p>想知道今天的菜单和价格？WhatsApp 我们，直接发给你。<br><span>For today&rsquo;s menu and prices, WhatsApp us and we will send them to you.</span></p>
+      <a class="btn btn-gold" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E9%97%AE%E4%BB%8A%E5%A4%A9%E7%9A%84%E8%8F%9C%E5%8D%95%E5%92%8C%E4%BB%B7%E6%A0%BC%E3%80%82Hello%2C%20could%20you%20share%20today%27s%20menu%20and%20prices%3F" target="_blank" rel="noopener">Ask on WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -671,8 +721,8 @@
       <div class="eyebrow reveal">The Roast Goose Experience</div>
       <h2 class="reveal d1">The Signature<br>Roast Goose.</h2>
       <p class="cn-head reveal d1">招牌燒鵝，值得提前預訂。</p>
-      <p class="lede reveal d2">Planning a special family dinner? Our roast goose is prepared in limited numbers each day. Contact us to enquire about availability and advance reservations — and let us save one for your table.</p>
-      <a class="btn btn-gold reveal d2" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20enquire%20about%20roast%20goose%20availability%20and%20advance%20booking." target="_blank" rel="noopener">
+      <p class="lede reveal d2">Planning a special family dinner? Our roast goose is best booked ahead — message us on WhatsApp and we will confirm availability with you directly, and save one for your table.</p>
+      <a class="btn btn-gold reveal d2" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E9%97%AE%E7%83%A7%E9%B9%85%E4%BB%8A%E5%A4%A9%E6%9C%89%E6%B2%A1%E6%9C%89%E3%80%81%E6%80%8E%E4%B9%88%E9%A2%84%E8%AE%A2%E3%80%82Hello%2C%20I%27d%20like%20to%20enquire%20about%20roast%20goose%20availability%20and%20advance%20booking." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Enquire on WhatsApp
       </a>
@@ -748,13 +798,51 @@
           </div>
         </div>
         <div class="loc-cta">
-          <a class="btn btn-gold" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="btn btn-gold" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">WhatsApp Us</a>
           <a class="btn btn-dark" href="https://maps.app.goo.gl/QjFUmkfYDPoPePbTA" target="_blank" rel="noopener">Get Directions</a>
         </div>
+        <p class="loc-reviews">See what diners say &mdash; <a href="https://maps.app.goo.gl/QjFUmkfYDPoPePbTA" target="_blank" rel="noopener">read our reviews on Google Maps</a>.</p>
       </div>
       <div class="map-frame reveal d1">
         <iframe title="Map — Shang Pin Cantonese Restaurant, 59 Jalan Indah 16/12, Taman Bukit Indah, Johor Bahru" src="https://www.google.com/maps?q=Shang%20Pin%20Cantonese%20Restaurant%2C%2059%20Jalan%20Indah%2016%2F12%2C%20Taman%20Bukit%20Indah%2C%2081200%20Johor%20Bahru&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <div class="eyebrow">Good to Know</div>
+      <h2>Questions, Answered.</h2>
+      <p class="cn-head">常見問題</p>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>Do I need to book the roast goose in advance?</summary>
+        <p>Yes &mdash; we recommend booking ahead. Message us on WhatsApp and we will confirm availability with you directly.</p>
+      </details>
+      <details>
+        <summary>How do I reserve a table?</summary>
+        <p>WhatsApp us or call <a href="tel:+601120997188">011-2099 7188</a>, and we will confirm your booking with you directly.</p>
+      </details>
+      <details>
+        <summary>Where are you located?</summary>
+        <p>59, Jalan Indah 16/12, Taman Bukit Indah, 81200 Johor Bahru. Tap &ldquo;Get Directions&rdquo; above and Google Maps will take you here.</p>
+      </details>
+      <details>
+        <summary>Is the restaurant suitable for family gatherings?</summary>
+        <p>Yes &mdash; our dining room is set with large round tables made for sharing, ideal for family dinners and celebrations.</p>
+      </details>
+      <details>
+        <summary>Can I see the full menu and prices?</summary>
+        <p>The menu on this page shows sample Cantonese classics. For today&rsquo;s full menu and prices, WhatsApp us and we will send them to you.</p>
+      </details>
+      <details>
+        <summary>What are your opening hours?</summary>
+        <p>Please call or WhatsApp ahead to confirm our opening hours before your visit.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -766,7 +854,7 @@
     <h2 class="reveal d1">Your Table Is Waiting.</h2>
     <p class="cn-head reveal d1">今晚，來上品吃頓好飯。</p>
     <p class="lede reveal d2" style="margin-left:auto;margin-right:auto;text-align:center">Make your next gathering memorable with authentic Cantonese flavours.</p>
-    <a class="btn btn-gold reveal d2" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">
+    <a class="btn btn-gold reveal d2" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
       Contact Us on WhatsApp
     </a>
@@ -792,12 +880,13 @@
           <li><a href="#menu">Menu</a></li>
           <li><a href="#roast-goose">Roast Goose</a></li>
           <li><a href="#visit">Location &amp; Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="foot-contact">
         <h5>Contact</h5>
         <p>59, Jalan Indah 16/12,<br>Taman Bukit Indah,<br>81200 Johor Bahru, Johor</p>
-        <p style="margin-top:12px"><a href="tel:+601120997188">+60 11-2099 7188</a><br><a href="https://maps.app.goo.gl/QjFUmkfYDPoPePbTA" target="_blank" rel="noopener">Get Directions on Google Maps</a></p>
+        <p style="margin-top:12px"><a href="tel:+601120997188">+60 11-2099 7188</a><br><a href="https://maps.app.goo.gl/QjFUmkfYDPoPePbTA" target="_blank" rel="noopener">Get Directions on Google Maps</a><br><a href="https://maps.app.goo.gl/QjFUmkfYDPoPePbTA" target="_blank" rel="noopener">Read reviews on Google Maps</a></p>
       </div>
     </div>
     <div class="foot-disclaimer">
@@ -811,10 +900,16 @@
 </footer>
 
 <!-- floating WhatsApp -->
-<a class="wa-float" href="https://wa.me/601120997188?text=Hello%20Shang%20Pin%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener" aria-label="Chat with Shang Pin on WhatsApp">
+<a class="wa-float" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener" aria-label="Chat with Shang Pin on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 <span class="wa-label">Chat with us on WhatsApp</span>
+
+<!-- sticky mobile contact bar (mobile only) -->
+<div class="sticky-cta" role="navigation" aria-label="Contact Shang Pin">
+  <a class="sticky-call" href="tel:+601120997188" aria-label="Call Shang Pin now">Call Now &middot; 致电</a>
+  <a class="sticky-wa" href="https://wa.me/601120997188?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E8%AE%A2%E4%BD%8D%E3%80%82Hello%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener" aria-label="Book a table on WhatsApp">WhatsApp &middot; 订位</a>
+</div>
 
 <!-- preview badge (remove after payment) -->
 <div class="preview-badge">Preview · 一夜搞定</div>
